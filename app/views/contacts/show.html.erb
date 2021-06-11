@@ -1,0 +1,17 @@
+<h1>
+	<%= @contact.name %> <br/>
+</h1>
+<h3>
+	<small>ID: <%= @contact.id %></small>
+</h3>
+
+<hr/>
+
+<h5>Email: <%= @contact.email %></h5>
+<h5>Email secundário: <%= @contact.email_secundario %></h5>
+<h5>Telefone: <%= @contact.telefone %></h5>
+<h5>Telefone comercial: <%= @contact.telefone_comercial %></h5>
+
+
+<%= link_to('Voltar', contacts_path, class: 'btn btn-dark') %>
+<%= link_to('Editar', edit_contact_path, class: 'btn btn-dark') %>

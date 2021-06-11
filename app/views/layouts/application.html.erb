@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customerx</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+  <header >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-bank"></i> &nbsp;<strong>CustomerX</strong>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to 'Clientes', clients_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to 'Contatos', contacts_path, class: 'nav-link' %>
+            </li>
+            <li><%= link_to('Sair', destroy_user_session_path, method: :delete, class: 'nav-link') 
+            %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <%= yield %>
+</body>
+
+

@@ -1,0 +1,17 @@
+<h1>
+	<%= @client.name %> <br/>
+</h1>
+<h3>
+	<small>ID: <%= @client.id %></small>
+</h3>
+
+<hr/>
+
+<h5>Email: <%= @client.email %></h5>
+<h5>Email secundário: <%= @client.email_secundario %></h5>
+<h5>Telefone: <%= @client.telefone %></h5>
+<h5>Telefone comercial: <%= @client.telefone_comercial %></h5>
+<h5>Data de registro: <%= @client.data_de_registro %></h5>
+
+<%= link_to('Voltar', clients_path, class: 'btn btn-dark') %>
+<%= link_to('Editar', edit_client_path, class: 'btn btn-dark') %>
