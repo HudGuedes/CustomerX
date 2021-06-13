@@ -6,7 +6,6 @@ class CreateClients < ActiveRecord::Migration[6.1]
       t.string :email_secundario
       t.string :telefone
       t.string :telefone_comercial
-      t.date :data_de_registro
 
       t.timestamps
     end

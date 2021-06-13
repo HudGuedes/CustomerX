@@ -1,15 +1,11 @@
-<h3 class="text-center">Clientes
-	<%= link_to('Novo cliente', new_client_path, class: 'btn btn-dark float-end') %>
-	<%= link_to('Novo contato', new_contact_path, class: 'btn btn-dark float-end') %>
+<h3>Clientes
+	<%= link_to('Novo cliente', new_client_path, class: 'btn btn-primary float-end') %>
+<hr/>
 </h3>
 <br clear="all">
-<% if @clients.nil? %>
-	<div class="alert alert-info">
-		Nenhum cliente encontrado
-	</div>
-<% else %>
+<% if @clients.present? %>
 	<table class="table">
-		<thead class="table-dark">
+		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Nome</th>
@@ -18,7 +14,7 @@
 				<th>Telefone</th>
 				<th>Telefone comercial</th>
 				<th>Data de registro</th>
-				<th>Opções</th>
+				<th>#</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,13 +26,28 @@
 					<td><%= client.email_secundario %></td>
 					<td><%= client.telefone %></td>
 					<td><%= client.telefone_comercial %></td>
-					<td><%= client.data_de_registro %></td>
+					<td><%= client.created_at %></td>
 					<td>
-					<%= link_to('Editar', edit_client_path(client.id), class: "btn btn-dark") %>
-					<%= link_to('Visualizar', client_path(client.id), class: "btn btn-dark") %>
-					<%= button_to('Deletar', client_path(client.id), method: :delete, class: 'btn btn-dark', data: {confirm: 'Tem certeza?'}) %>
+						<div class="dropdown">
+						  <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						    Opções
+						  </a>
+
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<li><%= link_to('Contatos', contacts_client_path(client.id), class: 'dropdown-item') %></li>
+							<li><hr class="dropdown-divider"></li>
+						    <li><%= link_to('Editar', edit_client_path(client.id), class: 'dropdown-item') %></li>
+						    <li><%= link_to('Visualizar', client_path(client.id), class: 'dropdown-item') %></li>
+						    <li><%= link_to('Deletar', client_path(client.id), method: :delete, class: 'dropdown-item', data: {confirm: 'Tem certeza?'}) %></li>
+						  </ul>
+						</div>
+					</td>
 				</tr>
 			<% end %>
 		</tbody>
 	</table>
+<% else %>
+	<div class="alert alert-info">
+		Nenhum cliente encontrado
+	</div>
 <% end %>

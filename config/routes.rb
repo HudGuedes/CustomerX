@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to:'clients#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :clients
+  resources :clients do
+  	get 'contacts', on: :member
+  end
   resources :contacts
 end

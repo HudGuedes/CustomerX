@@ -10,7 +10,7 @@
 
     <div class="form-group mb-3">
       <%= form.label :email %>
-      <%= form.text_field :email, class: "form-control", autofocus: true %>
+      <%= form.email_field :email, class: "form-control", autofocus: true %>
       <% @contact.errors.full_messages_for(:email).each do |message| %>
         <div class="text-danger"><%= message %></div>
       <% end %>
@@ -18,7 +18,7 @@
 
      <div class="form-group mb-3">
       <%= form.label :email_secundario %>
-      <%= form.text_field :email_secundario, class: "form-control", autofocus: true %>
+      <%= form.email_field :email_secundario, class: "form-control", autofocus: true %>
       <% @contact.errors.full_messages_for(:email_secundario).each do |message| %>
         <div class="text-danger"><%= message %></div>
       <% end %>
@@ -26,7 +26,7 @@
 
     <div class="form-group mb-3">
       <%= form.label :telefone %>
-      <%= form.text_area :telefone, class: "form-control", autofocus: true %>
+      <%= form.text_field :telefone, class: "form-control", autofocus: true %>
       <% @contact.errors.full_messages_for(:telefone).each do |message| %>
         <div class="text-danger"><%= message %></div>
       <% end %>
@@ -34,11 +34,13 @@
 
     <div class="form-group mb-3">
       <%= form.label :telefone_comercial %>
-      <%= form.text_area :telefone_comercial, class: "form-control", autofocus: true %>
+      <%= form.text_field :telefone_comercial, class: "form-control", autofocus: true %>
       <% @contact.errors.full_messages_for(:telefone_comercial).each do |message| %>
         <div class="text-danger"><%= message %></div>
       <% end %>
-    </div>    
+    </div>
+
+    <%= form.hidden_field :client_id, value: @contact.new_record? ? @client_id : @contact.client_id %>    
 
     <%= form.submit class: "btn btn-dark btn-block" %>
   <% end %>

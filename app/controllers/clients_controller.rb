@@ -5,6 +5,10 @@ class ClientsController < ApplicationController
 		@clients = Client.all
 	end
 
+  def contacts
+    @client = Client.find(params[:id])
+  end
+
 	def show
 		@client = Client.find(params[:id])
 	end

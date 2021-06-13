@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_06_11_034417) do
     t.string "email_secundario"
     t.string "telefone"
     t.string "telefone_comercial"
-    t.date "data_de_registro"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,8 +31,10 @@ ActiveRecord::Schema.define(version: 2021_06_11_034417) do
     t.string "email_secundario"
     t.string "telefone"
     t.string "telefone_comercial"
+    t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_contacts_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_06_11_034417) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "clients"
 end

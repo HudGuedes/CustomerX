@@ -9,13 +9,15 @@ class ContactsController < ApplicationController
 	end
 
 	def new
+    @client_id = params[:client_id]
 		@contact = Contact.new
 	end
 
 	def create
+    @client_id = contact_params[:client_id]
 		@contact = Contact.new(contact_params)
     if @contact.save
-      redirect_to contacts_path
+      redirect_to contacts_client_path(@client_id)
     else
       render :new
     end
@@ -28,7 +30,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(contact_params)
-      redirect_to contacts_path
+      redirect_to contacts_client_path(@contact.client_id)
     else
       render :edit
     end
@@ -43,6 +45,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :email_secundario, :telefone, :telefone_comercial)
+    params.require(:contact).permit(:name, :email, :email_secundario, :telefone, :telefone_comercial, :client_id)
   end
 end

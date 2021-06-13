@@ -1,40 +1,26 @@
-<h3 class="text-center">Contatos
-	<%= link_to('Novo cliente', new_client_path, class: 'btn btn-dark float-end') %>
-	<%= link_to('Novo contato', new_contact_path, class: 'btn btn-dark float-end') %>
-</h3>
-<br clear="all">
-<% if @contacts.nil? %>
+<h3>Contatos</h3>
+<hr/>
+<% if @contacts.present? %>
+	<div class="row">
+		<% @contacts.each do |contact| %>
+			<div class="col-md-3">
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Cliente: <%= contact.client.name %></h5>
+				    <p class="card-text">
+				    	Nome: <%= contact.name %> <br/>
+				    	Email: <%= contact.email %> <br/>
+				    	Email secundário: <%= contact.email_secundario %> <br/>
+				    	Telefone: <%= contact.telefone %> <br/>
+				    	Telefone comercial: <%= contact.telefone_comercial %> <br/>
+				    </p>
+				  </div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% else %>
 	<div class="alert alert-info">
 		Nenhum contato encontrado
 	</div>
-<% else %>
-	<table class="table">
-		<thead class="table-dark">
-			<tr>
-				<th>ID</th>
-				<th>Nome</th>
-				<th>Email</th>
-				<th>Email secundário</th>
-				<th>Telefone</th>
-				<th>Telefone comercial</th>
-				<th>Opções</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @contacts.each do |contact| %>
-				<tr>
-					<td><%= contact.id %></td>
-					<td><%= contact.name %></td>
-					<td><%= contact.email %></td>
-					<td><%= contact.email_secundario %></td>
-					<td><%= contact.telefone %></td>
-					<td><%= contact.telefone_comercial %></td>
-					<td>
-					<%= link_to('Editar', edit_contact_path(contact.id), class: "btn btn-dark") %>
-					<%= link_to('Visualizar', contact_path(contact.id), class: "btn btn-dark") %>
-					<%= button_to('Deletar', contact_path(contact.id), method: :delete, class: 'btn btn-dark', data: {confirm: 'Tem certeza?'}) %>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
 <% end %>

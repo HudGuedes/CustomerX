@@ -1,0 +1,50 @@
+<h3 class="text-center">
+	<%= @client.name %>
+	<%= link_to('Novo Contato', new_contact_path(client_id: @client.id), class: 'btn btn-primary float-end') %>
+</h3>
+<br clear="all">
+<% if @client.contacts.nil? %>
+	<div class="alert alert-info">
+		Nenhum contato encontrado
+	</div>
+<% else %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Email secundário</th>
+				<th>Telefone</th>
+				<th>Telefone comercial</th>
+				<th>Data de registro</th>
+				<th>#</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @client.contacts.each do |contact| %>
+				<tr>
+					<td><%= contact.id %></td>
+					<td><%= contact.name %></td>
+					<td><%= contact.email %></td>
+					<td><%= contact.email_secundario %></td>
+					<td><%= contact.telefone %></td>
+					<td><%= contact.telefone_comercial %></td>
+					<td><%= contact.created_at %></td>
+					<td>
+						<div class="dropdown">
+						  <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						    Opções
+						  </a>
+
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						    <li><%= link_to('Editar', edit_contact_path(contact.id), class: 'dropdown-item') %></li>
+						    <li><%= link_to('Deletar', contact_path(contact.id), method: :delete, class: 'dropdown-item', data: {confirm: 'Tem certeza?'}) %></li>
+						  </ul>
+						</div>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>

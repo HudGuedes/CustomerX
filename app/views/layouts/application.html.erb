@@ -4,8 +4,6 @@
     <title>Customerx</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -16,22 +14,27 @@
         <a class="navbar-brand" href="#">
           <i class="fa fa-bank"></i> &nbsp;<strong>CustomerX</strong>
         </a>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <%= link_to 'Clientes', clients_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to 'Contatos', contacts_path, class: 'nav-link' %>
-            </li>
-            <li><%= link_to('Sair', destroy_user_session_path, method: :delete, class: 'nav-link') 
-            %></li>
-          </ul>
-        </div>
+        <% if current_user %>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <%= link_to 'Clientes', clients_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to 'Contatos', contacts_path, class: 'nav-link' %>
+              </li>
+            </ul>
+          </div>
+          <span class="navbar-text float-right">
+            <%= link_to('Sair', destroy_user_session_path, method: :delete) %>
+          </span>
+        <% end %>
       </div>
     </nav>
   </header>
-  <%= yield %>
+  <div class="container mt-5">
+    <%= yield %>
+  </div>
 </body>
 
 
