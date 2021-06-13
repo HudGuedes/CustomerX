@@ -13,11 +13,11 @@ O projeto trata-se de um cadastro de clientes que pode conter muitos contatos as
 Clone o repositório para a sua máquina, copie e cole: git clone https://github.com/HudGuedes/CustomerX
 Após isso, entre na pasta onde você clonou o projeto e digite os comandos:
 
-yarn install
-bundle install
-rails db:create
-rails db:migrate
-e rails s
+- yarn install
+- bundle install
+- rails db:create
+- rails db:migrate
+- rails s
 
 Acesse: http://localhost:3000/
 
