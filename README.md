@@ -23,9 +23,9 @@ Acesse: http://localhost:3000/
 
 Você sairá na parte de login do projeto. Como e um novo usuário, clique no link novo usuário e faça o seu cadastro. Lembrando que os campos são obrigatórios e tem que ser um e-mail válido. Após realizar o cadastro, você irá para a tela inicial do projeto.
 
-Como ainda não foi realizado nada no projeto, clique no link Novo cliente e crie um cliente. Lembrando que os campos Name, Email e Telefone são obrigatórios e o e-mail tem que ser um e-mail válido, os campos Email secundário e Telefone comercial ficará a seu critério preencher. Após criar o cliente, você retornará para a página inicial do projeto, porém com os detalhes do cliente criado. Na aba opções terá alguns links, como Contatos, editar, visualizar e deletar. 
+Como ainda não foi realizado nada no projeto, clique no link Novo cliente e crie um cliente. Lembrando que os campos Name, Email e Telefone são obrigatórios e o e-mail tem que ser um e-mail válido, os campos Email secundário e Telefone comercial ficará ao seu critério preencher. Após criar o cliente, você retornará para a página inicial do projeto, porém com os detalhes do cliente criado. Na aba opções terá alguns links, como Contatos, editar, visualizar e deletar. 
 
-Para criar um contato relacionado ao cliente, clique no link opções do cliente que você deseja e logo em seguida em Contatos e crie um Novo contato e faça um novo contato. Lembrando que os campos Name, Email e Telefone são obrigatórios e o e-mail tem que ser um e-mail válido, os campos Email secundário e Telefone comercial ficará a seu critério preencher. Após criar o contato, você irá para a tela do cliente criado, demonstrando os detalhes do contato relacionado. Lá você poderá editar ou excluir o contato.
+Para criar um contato relacionado ao cliente, clique no link opções do cliente que você deseja e logo em seguida em Contatos e crie um Novo contato e faça um novo contato. Lembrando que os campos Name, Email e Telefone são obrigatórios e o e-mail tem que ser um e-mail válido, os campos Email secundário e Telefone comercial ficará ao seu critério preencher. Após criar o contato, você irá para a tela do cliente criado, demonstrando os detalhes do contato relacionado. Lá você poderá editar ou excluir o contato.
 
 No link CLientes na parte superior da tela, demonstra-lá todos os clientes criados e os seus detalhes.
 
