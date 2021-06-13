@@ -27,7 +27,7 @@ Como ainda não foi realizado nada no projeto, clique no link Novo cliente e cri
 
 Para criar um contato relacionado ao cliente, clique no link opções do cliente que você deseja e logo em seguida em Contatos e crie um Novo contato e faça um novo contato. Lembrando que os campos Name, Email e Telefone são obrigatórios e o e-mail tem que ser um e-mail válido, os campos Email secundário e Telefone comercial ficará ao seu critério preencher. Após criar o contato, você irá para a tela do cliente criado, demonstrando os detalhes do contato relacionado. Lá você poderá editar ou excluir o contato.
 
-No link CLientes na parte superior da tela, demonstra-lá todos os clientes criados e os seus detalhes.
+No link Clientes na parte superior da tela, demonstra-lá todos os clientes criados e os seus detalhes.
 
 No link Contatos na parte superior da tela, demonstra-lá todos os clientes criados e seus contatos relacionados, como um relatório.
 
